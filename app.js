@@ -1,8 +1,12 @@
 window.addEventListener('load',()=>{
+    function iconset(id){
+        const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${id}.svg`;
+        document.querySelector('.icon-weather')['src']=icon;
+    };
+    
     let city_btn=document.querySelector('.search-city')
     city_btn.addEventListener('click',()=>{
         let city_name=document.querySelector('.search-val').value;
-
         weatherapi_url = "http://api.openweathermap.org/data/2.5/weather?q=" + city_name + "&appid=05964be4af2fc2a2b7525c680828da7c&units=metric"
         fetch(weatherapi_url).then((data)=>{
             return data.json()
@@ -18,6 +22,8 @@ window.addEventListener('load',()=>{
             document.querySelector('.temperature-description').textContent=city_description;
             document.querySelector('.location-timezone').textContent=city_timezone;
             document.querySelector('.temperature-degree').textContent=city_temp;
+            let icon_id = data.weather[0].icon;
+            iconset(icon_id); 
             }
 
         });
@@ -45,7 +51,8 @@ window.addEventListener('load',()=>{
                     document.querySelector('.temperature-description').textContent=description;
                     document.querySelector('.location-timezone').textContent=timezone;
                     document.querySelector('.temperature-degree').textContent=temperature_main;
-                    
+                    let icon_id = data.weather[0].icon;
+                    iconset(icon_id);   
                 })
             let span=document.querySelector('.span')
             span.addEventListener('click',()=>{
