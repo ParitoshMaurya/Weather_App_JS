@@ -6,4 +6,7 @@ In this project, I have made a weather app using simple HTML, CSS and JavaScript
 - ES6
 - Using API's in JavaScript
 
-You will need to run `index.html` file in any browser with an active internet connection.
+You will need to run `index.html` file in any browser with an active internet connection. I have also deployed this project on Glitch :
+```
+https://weather-app-js.glitch.me/
+```
