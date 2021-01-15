@@ -7,7 +7,7 @@ window.addEventListener('load',()=>{
     let city_btn=document.querySelector('.search-city')
     city_btn.addEventListener('click',()=>{
         let city_name=document.querySelector('.search-val').value;
-        weatherapi_url = "http://api.openweathermap.org/data/2.5/weather?q=" + city_name + "&appid=05964be4af2fc2a2b7525c680828da7c&units=metric"
+        weatherapi_url = "https://api.openweathermap.org/data/2.5/weather?q=" + city_name + "&appid=05964be4af2fc2a2b7525c680828da7c&units=metric"
         fetch(weatherapi_url).then((data)=>{
             return data.json()
         })
@@ -38,7 +38,7 @@ window.addEventListener('load',()=>{
             long = position.coords.longitude;
             lat = position.coords.latitude;
             console.log(lat,long)
-            const api=`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=d9c68d659d3b5e061f806f68d9f26852`
+            const api=`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=d9c68d659d3b5e061f806f68d9f26852`
             fetch(api)
                 .then(response=>{
                     return response.json();
